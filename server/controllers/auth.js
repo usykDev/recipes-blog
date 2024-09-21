@@ -21,11 +21,11 @@ export const register = async (req, res) => {
           "Error creating user. Username must be at least 3 characters long",
       });
     } else if (
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(password) ||
+      !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(password) ||
       password.length < 8
     ) {
       return res.json({
-        message: "Password incorrect",
+        message: "Error creating user. Password incorrect",
       });
     }
 
