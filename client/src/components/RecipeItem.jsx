@@ -45,7 +45,6 @@ export const RecipeItem = ({ recipe }) => {
           </div>
         </div>
         <div className="text-xl font-bold">{recipe.title}</div>
-        {/* <p className="opacity-60 text-sm pt-4 line-clamp-4">{recipe.text}</p> */}
         <p
           className="opacity-80 text-sm pt-4 line-clamp-4"
           dangerouslySetInnerHTML={renderMarkdown(recipe.text)}

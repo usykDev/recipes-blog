@@ -17,7 +17,7 @@ export const RecipesPage = () => {
 
   useEffect(() => {
     fetchMyRecipes();
-  }, []); // without this dependancy updating slower
+  }, []);
 
   return (
     <div className="xxs:w-5/6 sm:w-4/6 items-center  mx-auto py-10 flex flex-col gap-10 xxs:py-4">

@@ -21,7 +21,6 @@ export const LoginPage = () => {
 
   useEffect(() => {
     if (status) toast(status);
-    // console.log(isAuth);
     if (isAuth) navigate("/");
   }, [status, isAuth, navigate]);
 

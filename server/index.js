@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
-import fileUpload from "express-fileupload"; // thisplagin gives opportunity of uploading file to server
+import fileUpload from "express-fileupload"; // plagin gives opportunity of uploading file to server
 
 import authRoute from "./routes/auth.js";
 import recipeRoute from "./routes/recipes.js";
@@ -21,10 +21,9 @@ const DB_NAME = process.env.DB_NAME;
 app.use(cors());
 app.use(express.json());
 app.use(fileUpload());
-app.use(express.static("uploads")); // folder uploads - we show to express where to load and keep static files
+app.use(express.static("uploads"));
 
 // routes
-// http://localhost:3002 + /api/auth + /login
 app.use("/api/auth", authRoute);
 app.use("/api/recipes", recipeRoute);
 app.use("/api/comments", commentRoute);
@@ -42,4 +41,3 @@ async function start() {
 }
 
 start();
-

@@ -33,7 +33,6 @@ export const register = async (req, res) => {
 
     if (isUsed) {
       return res.json({
-        // res.status(402).json({  // try to use this later
         message: "This username already exists",
       });
     }
