@@ -7,9 +7,9 @@ export const register = async (req, res) => {
   try {
     const { username, password } = req.body;
 
-    if (!username) {
-      return res.json({
-        message: "Error creating user. Username is required",
+    if (!username || !password) {
+      return res.status(400).json({
+        message: "Error creating user. Required fields are missing",
       });
     } else if (/\s/.test(username)) {
       return res.json({
@@ -19,6 +19,13 @@ export const register = async (req, res) => {
       return res.json({
         message:
           "Error creating user. Username must be at least 3 characters long",
+      });
+    } else if (
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(password) ||
+      password.length < 8
+    ) {
+      return res.json({
+        message: "Password incorrect",
       });
     }
 

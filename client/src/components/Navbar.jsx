@@ -102,7 +102,7 @@ export const Navbar = ({ isTopOfPage, setIsTopOfPage }) => {
       )}
 
       {/* Button / Bar */}
-      <div className="flex justify-center items-center ">
+      <div className="flex justify-center items-center">
         {isAboveMediumScreens ? (
           isAuth ? (
             <button
@@ -121,7 +121,7 @@ export const Navbar = ({ isTopOfPage, setIsTopOfPage }) => {
           )
         ) : (
           <button
-            className="drop-shadow-3xl rounded-full "
+            className="drop-shadow-3xl rounded-full"
             onClick={() => {
               setIsMenuToggled(!isMenuToggled);
             }}
@@ -135,15 +135,15 @@ export const Navbar = ({ isTopOfPage, setIsTopOfPage }) => {
       {!isAboveMediumScreens && isMenuToggled && (
         <div className="fixed bottom-0 right-0 z-40 h-full w-[200px] bg-beige-300 drop-shadow-xl">
           {/* Close Icon */}
-          <div className="flex justify-end p-12">
+          <div className="flex justify-end p-8">
             <button onClick={toggleMenu}>
               <img src={xMark} width={26} height={26} alt="Close Menu" />
             </button>
           </div>
 
           {/* Menu Items */}
-          <div className="ml-[20%] flex flex-col items-start   gap-6 text-lg ">
-            <ul className="flex flex-col xxs:gap-1 xs:gap-4 md:gap-8 justify-evenly items-start text-center ">
+          <div className="ml-[20%] flex flex-col items-start gap-6">
+            <ul className="flex flex-col xxs:gap-6 xs:gap-4 md:gap-8 justify-evenly items-start text-center text-lg">
               <li>
                 <NavLink
                   to="/"
@@ -179,18 +179,15 @@ export const Navbar = ({ isTopOfPage, setIsTopOfPage }) => {
               </li>
             </ul>
 
-            <div className="flex justify-center items-center bg-blue-100 drop-shadow-3xl rounded-full xxs:px-2 xs:px-4 md:px-4 xxs:py-1 xs:py-2 md:py-2 hover:bg-blue-500 hover:text-white">
+            <div className="flex justify-center text-md items-center bg-blue-100 drop-shadow-3xl rounded-full px-4 md:px-4  py-2 md:py-2 hover:bg-blue-500 hover:text-white">
               {isAuth ? (
-                <button
-                  onClick={logoutHandler}
-                  className="text-sm md:text-base"
-                >
+                <button onClick={logoutHandler} className=" md:text-base">
                   Log out
                 </button>
               ) : (
                 <Link
                   to="/login"
-                  className="text-sm md:text-base"
+                  className=" md:text-base"
                   onClick={() => setIsMenuToggled(false)}
                 >
                   Log in

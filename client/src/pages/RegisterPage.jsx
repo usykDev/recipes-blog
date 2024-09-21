@@ -37,6 +37,7 @@ export const RegisterPage = () => {
       dispatch(registerUser({ username, password }));
       setUsername("");
       setPassword("");
+      setPasswordAgain("");
     } catch (error) {
       console.log(error);
     }
