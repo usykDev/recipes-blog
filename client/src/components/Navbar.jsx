@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { checkIsAuth, logout } from "../redux/features/auth/authSlice";
 import { toast } from "react-toastify";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo-new-recipes.png";
 import { useNavigate } from "react-router-dom";
 import useMediaQuery from "../hooks/useMediaQuery";
 import bar from "../assets/bar.svg";
@@ -48,13 +48,14 @@ export const Navbar = ({ isTopOfPage, setIsTopOfPage }) => {
   };
 
   return (
+    //  changed nav styles + LOGO
     <nav
-      className={`${navbarBackground} flex justify-between items-center xxs:px-6 sm:px-12 xxs:py-3 xs:py-4 md:py-6 w-full`}
+      className={`${navbarBackground} flex xxs:px-6 sm:px-12 justify-between items-center py-2 w-full`}
     >
       {/* Logo */}
       <Link
         to="/"
-        className="flex justify-center gap-2 items-center w-16 h-8 my-3 rounded-sm"
+        className="flex justify-center gap-2 items-center w-20 h-20  rounded-sm"
         title="Main page"
       >
         <img className="drop-shadow-3xl" alt="logo" src={Logo} />

@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { toast } from "react-toastify";
 import { RecipeItem } from "../components/RecipeItem";
 import { PopularRecipes } from "../components/PopularRecipes";
 import { useDispatch, useSelector } from "react-redux";
