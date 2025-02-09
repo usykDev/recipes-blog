@@ -2,7 +2,7 @@
 
 A full-stack recipes blog application with user authentication, secure password hashing, and CRUD functionality for posts.
 
-![Recipes Blog](./client/public/image.png)
+![Recipes Blog](./client/public/recipes_pic.png)
 
 ## Features
 - User registration and authorization
