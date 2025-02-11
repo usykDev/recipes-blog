@@ -69,7 +69,7 @@ const PasswordInputAgain = ({
           />
         )}
       </div>
-      {errorPasswordAgain && isFocused && (
+      {errorPasswordAgain && (
         <div className="text-red-500 text-xs px-4">{errorPasswordAgain}</div>
       )}
     </div>

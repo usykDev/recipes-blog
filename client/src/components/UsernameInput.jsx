@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const UsernameInput = ({
   username,
@@ -7,6 +8,7 @@ const UsernameInput = ({
   setErrorUsername,
 }) => {
   const [isFocused, setIsFocused] = useState(false);
+  const location = useLocation();
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -45,7 +47,7 @@ const UsernameInput = ({
         placeholder="Username"
         className="text-black w-full rounded-full bg-white border py-2 px-4 text-sm outline-none placeholder:text-gray-400"
       />
-      {errorUsername && isFocused && (
+      {errorUsername && location.pathname === "/register" && (
         <div className="text-red-500 text-xs px-4">{errorUsername}</div>
       )}
     </div>

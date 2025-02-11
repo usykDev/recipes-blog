@@ -51,10 +51,16 @@ export const RecipeItem = ({ recipe }) => {
         />
 
         <div className="flex gap-3 items-center mt-2">
-          <button className="flex items-center justify-center gap-2 text-sm opacity-50">
+          <button
+            className="flex items-center justify-center gap-2 text-sm opacity-50"
+            title={`${recipe.views} views`}
+          >
             <AiFillEye /> <span>{recipe.views}</span>
           </button>
-          <button className="flex items-center justify-center gap-2 text-sm opacity-50">
+          <button
+            className="flex items-center justify-center gap-2 text-sm opacity-50"
+            title={`${recipe.comments?.length || 0} comments`}
+          >
             <AiOutlineMessage /> <span>{recipe.comments?.length || 0}</span>
           </button>
         </div>

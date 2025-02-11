@@ -150,10 +150,17 @@ export const RecipePage = () => {
 
           <div className="flex gap-3 items-center mt-4 justify-between">
             <div className="flex gap-3 ">
-              <button className="flex items-center justify-center gap-2 text-sm opacity-50">
-                <AiFillEye /> <span>{recipe.views}</span>
+              <button
+                className="flex items-center justify-center gap-2 text-sm opacity-50"
+                title={`${recipe.views} views`}
+              >
+                <AiFillEye />
+                <span>{recipe.views}</span>
               </button>
-              <button className="flex items-center justify-center gap-2 text-sm opacity-50">
+              <button
+                className="flex items-center justify-center gap-2 text-sm opacity-50"
+                title={`${recipe.comments?.length || 0} comments`}
+              >
                 <AiOutlineMessage /> <span>{recipe.comments?.length || 0}</span>
               </button>
             </div>
@@ -217,7 +224,11 @@ export const RecipePage = () => {
             <button
               type="submit"
               onClick={handleSubmit}
-              className="flex justify-center items-center  text-blue-500 bg-beige-300 hover:bg-beige-400 hover:text-black text-sm rounded-full py-2 px-4"
+              className={`${
+                user
+                  ? "hover:bg-beige-400 hover:text-black cursor-pointer"
+                  : "cursor-default"
+              } flex justify-center items-center  text-blue-500 bg-beige-300 text-sm rounded-full py-2 px-4`}
             >
               Send
             </button>

@@ -48,7 +48,6 @@ export const Navbar = ({ isTopOfPage, setIsTopOfPage }) => {
   };
 
   return (
-    //  changed nav styles + LOGO
     <nav
       className={`${navbarBackground} flex xxs:px-6 sm:px-12 justify-between items-center py-2 w-full`}
     >
@@ -76,8 +75,12 @@ export const Navbar = ({ isTopOfPage, setIsTopOfPage }) => {
             </li>
             <li>
               <NavLink
-                to={isAuth ? "/recipes" : "/"}
-                className="text-black hover:bg-white hover:rounded-full xxs:py-0 xs:py-2 md:py-2 xxs:px-1 xs:px-3 md:px-4"
+                to={isAuth && "/recipes"}
+                className={`text-black xxs:py-0 xs:py-2 md:py-2 xxs:px-1 xs:px-3 md:px-4 ${
+                  isAuth
+                    ? "hover:bg-white hover:rounded-full"
+                    : "cursor-default"
+                }`}
                 style={({ isActive }) =>
                   isAuth && isActive ? activeStyles : nonActiveStyles
                 }
@@ -88,8 +91,12 @@ export const Navbar = ({ isTopOfPage, setIsTopOfPage }) => {
             </li>
             <li>
               <NavLink
-                to={isAuth ? "/new" : "/"}
-                className="text-black hover:bg-white hover:rounded-full xxs:py-0 xs:py-2 md:py-2 xxs:px-1 xs:px-3 md:px-4"
+                to={isAuth && "/new"}
+                className={`text-black xxs:py-0 xs:py-2 md:py-2 xxs:px-1 xs:px-3 md:px-4 ${
+                  isAuth
+                    ? "hover:bg-white hover:rounded-full"
+                    : "cursor-default"
+                }`}
                 style={({ isActive }) =>
                   isAuth && isActive ? activeStyles : nonActiveStyles
                 }
