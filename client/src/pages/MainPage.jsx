@@ -17,14 +17,14 @@ export const MainPage = () => {
     return <div className="text-xl text-center py-10">No recipes yet</div>;
   }
   return (
-    <div className="flex sm:w-4/6 xxs:w-5/6 mx-auto sm:py-10 xxs:py-4">
+    <div className="flex lg:w-3/6 xxs:w-5/6 xs:w-4/6 mx-auto sm:py-10 xxs:py-4">
       <div className="flex sm:justify-between xxs:justify-center md:gap-8 xxs:gap-4">
-        <div className="flex flex-col gap-10 sm:basis-4/5">
+        <div className="flex flex-col gap-10 sm:basis-4/5 md:w-3/6">
           {recipes?.map((recipe, idx) => (
             <RecipeItem key={idx} recipe={recipe} />
           ))}
         </div>
-        <div className="md:basis-1/5  flex-col gap-4 xxs:hidden sm:flex sm:basis-2/6">
+        <div className="md:w-3/6  flex-col gap-4 xxs:hidden sm:flex sm:basis-3/6">
           <div className="text-sm uppercase text-center bg-white rounded-full py-2 px-4">
             Popular Recipes:
           </div>

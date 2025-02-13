@@ -15,7 +15,7 @@ export const AddRecipePage = () => {
   const submitHandler = async () => {
     try {
       if (!title || !text) {
-        return toast("Please fill out all fields to create a recipe");
+        return toast.error("Error adding recipe. Please fill in all fields");
       }
       const data = new FormData();
       data.append("title", title);
@@ -23,9 +23,9 @@ export const AddRecipePage = () => {
       data.append("image", image);
       await dispatch(createRecipe(data));
       toast("New recipe has been added");
-      navigate("/");
+      navigate("/recipes");
     } catch (error) {
-      toast("Error adding recipe");
+      toast.error("Error adding recipe");
     }
   };
 
@@ -47,7 +47,7 @@ export const AddRecipePage = () => {
 
   return (
     <form
-      className="sm:w-4/6 xxs:w-5/6 mx-auto flex flex-col py-10 gap-2"
+      className="xs:w-4/6 sm:w-3/6 xxs:w-5/6 mx-auto flex flex-col py-10 gap-2"
       onSubmit={(e) => e.preventDefault()}
     >
       <label className="text-gray-600 py-2 bg-white text-sm mt-2 cursor-pointer flex items-center justify-center border-2 border-dotted">

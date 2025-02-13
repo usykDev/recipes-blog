@@ -70,7 +70,9 @@ const PasswordInputAgain = ({
         )}
       </div>
       {errorPasswordAgain && (
-        <div className="text-red-500 text-xs px-4">{errorPasswordAgain}</div>
+        <div className="text-orange-900 text-xs px-4 italic">
+          {errorPasswordAgain}
+        </div>
       )}
     </div>
   );

@@ -36,12 +36,6 @@ const PasswordInput = ({
       } else {
         setErrorPassword("");
       }
-    } else {
-      if (!value) {
-        setErrorPassword("Password is required");
-      } else {
-        setErrorPassword("");
-      }
     }
   };
   const handleChangePassword = (e) => {
@@ -85,7 +79,9 @@ const PasswordInput = ({
         )}
       </div>
       {errorPassword && (
-        <div className="text-red-500 text-xs px-4">{errorPassword}</div>
+        <div className="text-orange-900 text-xs px-4 italic">
+          {errorPassword}
+        </div>
       )}
     </div>
   );

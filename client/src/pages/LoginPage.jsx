@@ -25,6 +25,10 @@ export const LoginPage = () => {
   }, [status, isAuth, navigate]);
 
   const handleSubmit = () => {
+    if (!username || !password) {
+      return toast.error("Please fill in all the fields");
+    }
+
     try {
       dispatch(loginUser({ username, password }));
     } catch (error) {

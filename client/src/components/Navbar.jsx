@@ -37,7 +37,7 @@ export const Navbar = ({ isTopOfPage, setIsTopOfPage }) => {
   const logoutHandler = () => {
     dispatch(logout());
     window.localStorage.removeItem("token");
-    navigate("/");
+    navigate("/login");
     toast("You logged out");
   };
 

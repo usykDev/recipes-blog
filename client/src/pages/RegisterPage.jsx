@@ -30,8 +30,12 @@ export const RegisterPage = () => {
   }, [status, isAuth, navigate]);
 
   const handleSubmit = () => {
+    if (!username || !password || !passwordAgain) {
+      return toast.error("Please fill in all the fields");
+    }
+
     if (password !== passwordAgain) {
-      return toast("Error. Your password fields don't match together");
+      return toast("Your password fields don't match together");
     }
     try {
       dispatch(registerUser({ username, password }));

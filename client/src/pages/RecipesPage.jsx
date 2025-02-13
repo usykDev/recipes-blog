@@ -20,7 +20,7 @@ export const RecipesPage = () => {
   }, []);
 
   return (
-    <div className="xxs:w-5/6 sm:w-4/6 items-center  mx-auto py-10 flex flex-col gap-10 xxs:py-4">
+    <div className="xxs:w-5/6 xs:w-4/6 sm:w-3/6 items-center  mx-auto py-10 flex flex-col gap-10 xxs:py-4">
       {recipes.length > 0 ? (
         recipes.map((recipe, idx) => <RecipeItem recipe={recipe} key={idx} />)
       ) : (

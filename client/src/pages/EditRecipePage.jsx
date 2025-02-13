@@ -24,6 +24,9 @@ export const EditRecipePage = () => {
   }, [params.id]);
 
   const submitHandler = async () => {
+    if (!title || !text) {
+      return toast.error("Error editing recipe. Please fill in all fields");
+    }
     try {
       const updatedRecipe = new FormData();
       updatedRecipe.append("title", title);

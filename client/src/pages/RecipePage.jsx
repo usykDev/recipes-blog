@@ -109,14 +109,14 @@ export const RecipePage = () => {
   };
 
   return (
-    <div className="flex flex-col sm:w-4/6 xxs:w-5/6 items-center py-8 gap-4">
+    <div className="flex flex-col xs:w-4/6 sm:w-4/6 xxs:w-5/6 items-center py-8 gap-4">
       <div className="flex flex-row justify-start w-full">
         <button className="flex items-baseline bg-white hover:bg-blue-500 hover:text-white text-sm rounded-full py-2 px-4">
           <Link to={"/"}>Back</Link>
         </button>
       </div>
-      <div className="flex gap-10 xxs:flex-col md:flex-row  items-center sm:items-start">
-        <div className="md:w-2/3 ">
+      <div className="flex gap-4 xxs:flex-col sm:flex-row  items-center sm:items-start">
+        <div className="sm:w-4/6">
           <div className="flex flex-col">
             <div
               className={
@@ -210,8 +210,10 @@ export const RecipePage = () => {
             )}
           </div>
         </div>
-        <div className="md:w-1/3 xxs:w-full flex gap-3 p-8  flex-col bg-white  rounded-3xl">
-          <form className="flex gap-2 " onSubmit={(e) => e.preventDefault()}>
+
+        {/* COMMENTS */}
+        <div className="sm:w-3/6 xxs:w-full flex gap-3 p-4 justify-center flex-col bg-white rounded-3xl">
+          <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
             <input
               type="text"
               value={comment}

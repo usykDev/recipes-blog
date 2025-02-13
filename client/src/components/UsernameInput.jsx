@@ -48,7 +48,9 @@ const UsernameInput = ({
         className="text-black w-full rounded-full bg-white border py-2 px-4 text-sm outline-none placeholder:text-gray-400"
       />
       {errorUsername && location.pathname === "/register" && (
-        <div className="text-red-500 text-xs px-4">{errorUsername}</div>
+        <div className="text-orange-900 text-xs px-4 italic">
+          {errorUsername}
+        </div>
       )}
     </div>
   );
